@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import googleLogo from './assets/google.png'
 import './App.css'
+import Widget from './Widget';
+
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -40,6 +42,7 @@ function App() {
           I'm Feeling Lucky
         </button>
       </div>
+      <Widget />
     </div>
   );
 }
