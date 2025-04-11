@@ -1,12 +1,14 @@
 #root {
-  width: 100%; /* Make sure it spans the full width */
-  height: 100vh; /* Use 100% of the viewport height */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove padding to avoid extra space */
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  background: linear-gradient(45deg, #ff00a5, #9b59b6, #8e44ad, #ff69b4);
-  background-size: 400% 400%; /* Increase the size of the gradient */
-  animation: gradientBackground 5s ease infinite; /* Add animation */
+  background-image: url('./assets/Y2KHearts.jpg'); /* <- adjust path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: makes it stay in place while scrolling */
 }
 
 @keyframes gradientBackground {
@@ -21,15 +23,105 @@
   }
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
+
+.logo-ripple {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 192, 203, 0.4);
+  animation: ripple 2s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* Logo animations (wave effect) */
+.wavy-logo {
+  animation: wave 2.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg) scale(1) translateY(0px);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.05) translateY(-5px);
+  }
+  50% {
+    transform: rotate(0deg) scale(0.98) translateY(5px);
+  }
+  75% {
+    transform: rotate(-3deg) scale(1.05) translateY(-3px);
+  }
+  100% {
+    transform: rotate(0deg) scale(1) translateY(0px);
+  }
+}
+
+/* Optional: subtle ripple effect behind the logo */
+.logo-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 192, 203, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+/* Logo hover effect */
+.logo {
+  height: 400px; /* You can go larger if needed */
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }

@@ -1,0 +1,28 @@
+/* src/components/WeatherWidget.css */
+.weather-widget {
+    position: fixed; /* Fix to the left side */
+    top: 50%; /* Vertically center */
+    left: 20px; /* Distance from the left */
+    transform: translateY(-50%); /* Adjust for true centering */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    font-family: Arial, sans-serif;
+    z-index: 1000; /* Ensures it appears above other content */
+}
+
+.weather-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.weather-info {
+    color: #555;
+    margin: 5px 0;
+}
+
+.weather-widget .error {
+    color: red;
+}
