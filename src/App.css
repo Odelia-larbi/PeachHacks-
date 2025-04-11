@@ -4,9 +4,14 @@
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove padding to avoid extra space */
   text-align: center;
-  background: linear-gradient(45deg, #ff00a5, #9b59b6, #8e44ad, #ff69b4);
+  /* background: linear-gradient(45deg, #ff00a5, #9b59b6, #8e44ad, #ff69b4);
   background-size: 400% 400%; /* Increase the size of the gradient */
-  animation: gradientBackground 5s ease infinite; /* Add animation */
+  /* animation: gradientBackground 5s ease infinite; /* Add animation */
+  background-image: url('./assets/Y2KHearts.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @keyframes gradientBackground {
